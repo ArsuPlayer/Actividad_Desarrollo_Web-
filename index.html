@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Web</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <p class="nav-link active" aria-current="page" href="#">Municipalidad De San Ramón</p>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">Módulos</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Tesorería</a></li>
+                    <li><a class="dropdown-item" href="#">Salud</a></li>
+                    <li><a class="dropdown-item" href="#">Rut/Nombre</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <!-- 1. Módulo de Tesoreria -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Módulo de Tesorería: Pago de Permisos (Cálculos y Retorno)
+                </h5>
+                <p class="card-text">Debe ingresar el monto de su permiso de circulación para saber cuánto pagará
+                    tras el descuento municipal.
+                </p>
+                <input type="number" id="inputMonto" placeholder="Ingrese el monto del permiso" />
+                <button onclick="pagarPermiso()">Calcular</button>
+                <div id="containerPermiso" class="d-none">
+                    <p id="resultadoPermiso"></p>
+                </div>
+
+            </div>
+        </div>
+        <!-- 2. Módulo de Salud -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Módulo de Salud: Fila de Vacunación
+                </h5>
+                <p class="card-text">Gestión de nombres en la fila de espera del consultorio local.
+                </p>
+                <input type="text" id="inputNombre" placeholder="Ingrese nombre del paciente" />
+                <button onclick="agregarNormal()">Agregar a la fila</button>
+                <button onclick="agregarUrgencia()">Agregar como urgencia</button>
+                <div id="containerVacunacion" class="d-none">
+                    <ol id="listaVacunacion"></ol>
+                </div>
+            </div>
+        </div>
+        <!-- 3. Módulo de Subsidios -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Módulo de Subsidios: Buscador de Beneficiarios (Ciclos e If)
+                </h5>
+                <p class="card-text">Verifica si tu RUT o nombre está en el listado de entrega de beneficios.
+                </p>
+                <input type="text" id="inputBeneficiario" placeholder="Ingrese nombre o RUT" />
+                <button onclick="verificarBeneficiario()">Verificar</button>
+
+                <div id="containerBeneficiario" class="d-none">
+                    <p id="resultadoBeneficiario"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>pie de pagina</footer>
+    <script src="static/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
